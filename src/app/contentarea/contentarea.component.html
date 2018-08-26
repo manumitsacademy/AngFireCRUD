@@ -1,0 +1,27 @@
+
+<div class="container">
+  <div class="jumbotron">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>Location</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of students">
+          <td><button (click)="deleteStudent(student.id)">Delete</button>
+            {{student.data.firstname}}</td>
+          <td>{{student.data.lastname}}</td>
+          <td>{{student.data.location}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div> 
+  <input type="text" placeholder="enter firstname" #fn>
+  <input type="text" placeholder="enter lastname" #ln>
+  <input type="text" placeholder="enter location" #loc><br>
+  <button (click)="addStudent(fn.value,ln.value,loc.value)">Add Student</button>
+
+</div>
